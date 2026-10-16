@@ -1,0 +1,9 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: pedidos-api
+  labels:
+    app: pedidos-api
+spec:
+  lookupPolicy:
+    local: true

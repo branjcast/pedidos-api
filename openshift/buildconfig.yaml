@@ -1,0 +1,22 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: pedidos-api
+  labels:
+    app: pedidos-api
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/branjcast/pedidos-api.git
+      ref: main
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: pedidos-api:latest
+  triggers:
+    - type: ConfigChange

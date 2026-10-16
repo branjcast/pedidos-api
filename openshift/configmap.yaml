@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pedidos-api-config
+  labels:
+    app: pedidos-api
+data:
+  MONGODB_DATABASE: pedidos
+  JWT_ISSUER: https://pedidos-api
+  JWT_EXPIRATION_MINUTES: "60"
+  JWT_PRIVATE_KEY_PATH: /etc/jwt/privateKey.pem
+  JWT_PUBLIC_KEY_PATH: /etc/jwt/publicKey.pem
+  CORS_ORIGINS: "*"
